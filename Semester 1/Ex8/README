@@ -1,0 +1,43 @@
+
+/* ============================================================================
+ * Name:       ex8a
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    Sort With Threads
+ * ============================================================================
+ * This program creates 5 processes.
+ * each process will allocate an array with 10 cells and insert random values in
+ * range of 1-1000 and will sort the array with bubble sort and make it global
+ * with pthread_setspecific() function.
+ * the main process will get all of the 5 sorted arrays and will merge them
+ * into 1 sorted array and will print it.
+ *
+ * Compile: gcc -pthread -o ex8a ex8a.c
+ * Run: ex8a
+ * Input: none
+ * Output: all of the numbers rolled sorted
+ * ============================================================================
+ */
+
+
+/* ============================================================================
+ * Name:       ex8b
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    Find Vals In Matrix
+ * ============================================================================
+ * This program fills matrix in random values and creates 4 threads.
+ * each process will run in infinite loop and will roll random value in the
+ * range of 1-1000. the process will look for the value he rolled in the
+ * fathers matrix and when he finds he will put 0 instead of the value. if all
+ * the row will be filled with 0's the process will print it's number and will
+ * kill all the other processes.
+ *
+ * Compile: gcc -pthread -o ex8b ex8b.c
+ * Run: ex8b
+ * Input: none
+ * Output: the number of the process that found all the values in his row first
+ * ============================================================================
+ */

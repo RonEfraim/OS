@@ -1,0 +1,66 @@
+
+/* ============================================================================
+ * Name:       ex2a
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    Signals
+ * ============================================================================
+ *
+ * This program creates a child and runs 10 times in a loop. the signals that
+ * are set are- SIGUSR1, SIGTERM.
+ * in the loop-
+ * sleep for a random number of seconds (0-3)
+ * sends to the other SIGUSR1 signal
+ * counts the signals sent
+ * in SIGUSR1-
+ * prints "process <pid> got signal SIGUSR1"
+ * if signals received are bigger or equal to signals sent times 2, prints
+ * "process <pid> surrender <signals received> <signals sent>"
+ * sends SIGTERM signal
+ * in SIGTERM-
+ * prints "process <pid> win <signals received> <signals sent>"
+ *
+ * Compile: gcc -Wall ex2a.c -0 ex2a
+ * Run: ex2a
+ * Input: none
+ * Output: (a few) possible race conditions:
+ * 1) father will roll 0 10 times and will not sleep and the child will not get
+ * the processor and father will win.
+ * 2) one process surrender and before doing the kill function give the 
+ * processor and send another signal and the other process will win
+ *
+ * ============================================================================
+ */
+
+
+
+/* ============================================================================
+ * Name:       ex2b
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    Signals
+ * ============================================================================
+ *
+ * This program creates a child and runs in an infinite loop.
+ * in the loop-
+ * draws a random number (0-6)
+ * if number = 0- prints "process <pid> ends" and quits.
+ * if number is in range 1-3- waits 5 seconds to get a signal.
+ * if a signal came- prints "process <pid> had a partner" and continues.
+ * else- prints "process <pid> was left alone, and quits" and quits.
+ * if he got 10 signals- prints "process <pid> surrender" and quits.
+ *
+ * Compile: gcc -Wall ex2b.c -0 ex2b
+ * Run: ex2b
+ * Input: none
+ * Output: possible race conditions:
+ * 1) father will get to pause and son release him and same for when the son 
+ * gets to pause and father release him, and both will get 10 signals and 
+ * both surrender.
+ * 2) one process will surrender and the other and rolls 0-4 and go to sigusr1
+ * and will print that the process has a partner
+ *
+ * ============================================================================
+ */

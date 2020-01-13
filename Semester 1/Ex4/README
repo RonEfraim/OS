@@ -1,0 +1,73 @@
+
+/* ============================================================================
+ * Name:       ex4a
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    GCD and Primes servers
+ * ============================================================================
+ *
+ * This program has 2 serever- one that calculates the GCD of 2 numbers and the
+ * other that breaks a number to its primes (up to 100).
+ * the client get data through the argument vector, if 0 is entered then the 
+ * GCD server is activated and 2 numbers need to be entered after the 0 and if
+ * 1 was enterd the the primes server is activated and 1 number needs to be 
+ * entered after 1. 
+ * the result will be send back through a message queue and client will print
+ * it.
+ * the run will end by getting SIGINT.
+
+ * Compile: gcc -Wall ex4a.c -0 ex4a
+ * Run: ex4a
+ * Input: 0 or 1, if 0- 2 ints after, if 1- one int after
+ * Output: if 1- all its primes, if 0- the gcd of 2 num entered.
+ * ============================================================================
+ */
+
+
+/* ============================================================================
+ * Name:       ex4b
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    GCD and Primes servers
+ * ============================================================================
+ *
+ * This program has 2 serever- one that calculates the GCD of 2 numbers and the
+ * other that breaks a number to its primes (up to 100).
+ * the client get data through the argument vector, if 0 is entered then the 
+ * GCD server is activated and 2 numbers need to be entered after the 0 and if
+ * 1 was enterd the the primes server is activated and 1 number needs to be 
+ * entered after 1. 
+ * the result will be send back through a named pipe and client will print
+ * it.
+ * the run will end by getting SIGINT.
+
+ * Compile: gcc -Wall ex4b.c -0 ex4b
+ * Run: ex4b
+ * Input: 0 or 1, if 0- 2 ints after, if 1- one int after
+ * Output: if 1- all its primes, if 0- the gcd of 2 num entered.
+ * ============================================================================
+ */
+
+
+/* ============================================================================
+ * Name:       ex4c
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    Father To Child Message Queue
+ * ============================================================================
+ *
+ * This program opens a msg q and make 2 children. each child defnes array with
+ * 10 cells and fill it with random ints. the dad rolls ints from 0 to 100 in
+ * an endless loop and and send to each child, once a child got all the ints
+ * from dad and marked them all in his array it kills the other child and send
+ * the dad a message and prints the numbers.
+ *
+ * Compile: gcc -Wall ex4c.c -0 ex4c
+ * Run: ex4c
+ * Input: none
+ * Output: the array of the child that finished first
+ * ============================================================================
+ */

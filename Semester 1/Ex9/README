@@ -1,0 +1,65 @@
+
+/* ============================================================================
+ * Name:       ex9a
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    Threads Semaphore
+ * ============================================================================
+ * This program will allocated an array size 13 to shared memory.
+ * the array will contain 2 child id's in the first 2 cells and random prime
+ * numbers in cells 2-12 and primes counter in the 13'th cell.
+ * the program will make 2 children.
+ * each child will roll in an infinite loop and roll random numbers in range of
+ * 2-1000 using srand(17), if the number rolled is prime it will insert it to
+ * shared memory array, and whoever child will finish filling the array first
+ * will kill his brother, print the array and free the shared memory and
+ * semaphore.
+ *
+ * possible race conditions:
+ * 1) first child done filling the array before the other child has done
+ * anything.
+ * 2) first child done filling the array before the other child wrote on the
+ * shared memory, so the other child tries to attach to the shared memory to
+ * the shared memory after it was already deleted by the first child - error
+ * 3) both children will insert primes to the array so the array will be mixed
+ *
+ * Compile: gcc ex9a.c -o thread -ex9a
+ * Run: ./ex9a
+ * Input: none
+ * Output: array of random primes
+ * ============================================================================
+ */
+
+
+
+/* ============================================================================
+ * Name:       ex9b
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    Threads Semaphore
+ * ============================================================================
+ * This program creates 3 semaphores, 2 children and 1 shared memory.
+ * the parent starts the bingo game:
+ * each child will create an array sized 10 and insert random values.
+ * the parent also rolled a random value and send it to the children through
+ * the shared memory.
+ * when a child finishes covering the numbers he kills his brother and prints
+ * his numbers and sends a signal to the parent and exits.
+ * when the parent gets the signal he closes the semaphore and the shared
+ * memory.
+ *
+ * possible race conditions:
+ * 1) parents add 2 numbers and child #1 gets number #1 and child #2 gets number
+ * 2 and so on until one wins (good condition).
+ * 2) parent adds 2 items and child #1 get number #1 and child #1 tries to get
+ * another number -> child #1 will continue to wait -> child #2 will starve
+ * until a contact switch hopefully happens.
+ *
+ * Compile: gcc ex9b.c -o thread -ex9b
+ * Run: ./ex9b
+ * Input: none
+ * Output: all of the numbers rolled sorted
+ * ============================================================================
+ */

@@ -1,0 +1,42 @@
+
+/* ============================================================================
+ * Name:       ex3a
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    Pipe Towers Of Hanoi
+ * ============================================================================
+ *
+ * This program creates 5 processes, each will do the towers of Hanoi with
+ * 5,10,15,20,25 rings and will send the information threw the standard output
+ * with a redirection from the pipe output and receive the information threw
+ * the standard input.
+ * the program will calculate the time took each kind of child to do the
+ * algorithm and print the min max and average run time for each kind of child.
+ *
+ * Compile: gcc -Wall ex3a.c -0 ex3a
+ * Run: ex3a
+ * Input: none
+ * Output: minimum, maximum and average run time of the towers of Hanoi job for
+ * each number of rings required.
+ * ============================================================================
+ */
+
+
+/* ============================================================================
+ * Name:       ex3b
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    Pipe Sorted Array
+ * ============================================================================
+ *
+ * This program creates 5 children, each will sort a fifth of a 500 cells array
+ * and the children will send the sorted parts of the array to dad threw a pipe
+ *
+ * Compile: gcc -Wall ex3b.c -0 ex3b
+ * Run: ex3b
+ * Input: none
+ * Output: minimum and maximum numbers of the sorted array (first and last cell)
+ * ============================================================================
+ */

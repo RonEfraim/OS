@@ -1,0 +1,34 @@
+
+
+/* ============================================================================
+ * Name:       ex7
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    RPC connection
+ * ============================================================================
+ *
+ * This program has a server and a client and connects them through rpc.
+ * Serever- has 3 functions:
+ * 1) is_lowercase: checks if the string entered is all lowercase.
+ * 2) digit_sum: gets a rational number and adds it's digits.
+ * 3) check_dup: gets 2 strings and tells how many same letters it has.
+ * Client- connects to server and user enters a number:
+ * 1: for is_lowercase function.
+ * 2: for digit_sum function.
+ * 3: for check_dup function.
+ * 0: to end program.
+ * else: wrong input- exits.
+
+ * Compile: rpcgen ex7.x
+   gcc -Wall ex7a1.c ex7_svc.c -lm -o server
+   gcc -Wall ex7a2.c ex7_clnt.c -o client
+ * Run: server &
+   client <IP>
+
+ * Input: 1- for lowercase, 2- for digit sum, 3- check duplication, 0- exit.
+
+ * Output: 1- is/isn't lowercase, 2- the sum of digits, 
+   3- how many chars are similar, 0- exit.
+ * ============================================================================
+ */

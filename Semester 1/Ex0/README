@@ -1,0 +1,21 @@
+
+/* ============================================================================
+ * Name:       ex0
+ * Written by: Sahar Itzhak, Ron Efraim
+ * ID:         308389485, 204661425
+ * Login:      saharyz, ronef
+ * Program:    Allocate a matrix with data
+ * ============================================================================
+ *
+ * This program opens a file of integers.
+ * the program will insert ints from the file to a struct, and check for a row
+ * will total highest values, if such was not found, program will print -1 and
+ * free the memory allocated.
+ *
+ * Compile: gcc -Wall ex0.cc -0 ex0
+ * Run: ex0
+ * Input: a file of ints.
+ * Output: the num of the line with the total highest values, else -1.
+ * Run Time: m*n^2 when m is the lines_len array and n is the 2nd array.
+ * ============================================================================
+ */
